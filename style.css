@@ -1,0 +1,128 @@
+header{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    height: 50px;
+    margin-bottom: 0;
+}
+
+.cabecalho{
+    position: relative;
+    width: 940px;
+    margin: auto;
+    top: 50px;
+}
+
+h2{
+    position: absolute;
+    right: 0;
+    top:0;
+    
+}
+
+main{
+   
+    height: 110px;
+}
+
+.inputs{
+    width: 500px;
+    height: 110px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+#enviar {
+    margin-top: 0;
+}
+
+.palavras{
+    width: 500px;
+    height: 50px;
+    border: none;
+    background-color: rgb(37, 60, 191);
+    margin: 10px 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.botao{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 160px;
+    
+}
+
+.botao button{
+    width: 250px;
+    height: 50px;
+    border: none;
+    background-color: rgb(37, 60, 191);
+    margin-top: 6px;
+    font-size: 22px;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    display: inline-block;
+
+}
+
+
+.botao button:hover{
+    color: rgb(206, 220, 0);
+    border-color: rgb(206, 220, 0);
+    font-size: 26px;
+}
+
+.botao button:active{
+    color: rgb(6, 253, 6);
+    border-color: rgb(6, 253, 6);
+    background-color: rgb(0, 0, 179);
+}
+
+.canvas{
+    position: relative;
+}
+
+#jogo{
+    border: none;
+    display: block;
+    margin: auto;
+    width: 900px;
+    height: 600px;
+    
+}
+
+.imagem{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    border-radius: 40px;
+    background-color: #00ae14;
+}
+
+.imagem:active{
+    transform: rotate(120deg);
+}
+
+footer{
+    margin-top: 500px;
+    height: 155px;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.rodape {
+    display: inline-block;
+    padding: 120px 0 0 0;
+    font-size: 13px;
+}

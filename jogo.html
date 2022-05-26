@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Play - Jogo da Forca</title>
+
+       <link rel="stylesheet" href="reset.css"> 
+        <link rel="stylesheet" href="style.css"> 
+       
+    <body>
+         <header> 
+             <div class="cabecalho"> 
+                <h1><img id="alura" src="imagens/logoalura.png"></h1>
+                <h2><img  id="game" src="imagens/game.png"></h2>
+             </div> 
+         </header>
+         <main>
+           <div class="inputs">
+               <Input type="text" id="adicionar" class="palavras" placeholder="Nova palavra..."></Input>
+               <input type="text" id="dica" class="palavras" placeholder="Dica...">
+           </div>
+            <div class="botao">
+                <button type="button" class="botoes" id="enviar">Enviar</button>
+                <button type="button" class="botoes" id="iniciar">Iniciar Jogo</button>
+                <button type="button" class="botoes" id="palavra">Nova Palavra</button>
+            </div>
+            <div class="canvas">
+                <canvas class="canvas" id="jogo" width="800" height="600"></canvas>  
+            </div>
+             <div class="img">
+                <img id="recarregar" class="imagem" src="recarregar.png" onclick="reinicia()">
+            </div>
+         </main>
+         <footer>
+            <p class="rodape">Challenge Alura II | &copy; Copyright Jogo da Forca | Desenvolvedor - Matheus Antonio</p>
+         </footer> 
+        
+         <script src="script.js"></script>
+         <script src="desenhos.js"></script>
+         <script src="reiniciar.js"></script>
+            
+    </body>
+
+
+
+</html>
