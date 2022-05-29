@@ -174,7 +174,7 @@ function desenhaDerrota(){
     pincel.lineWidth = 5;
     pincel.stroke();
 
-    pincel.font ='Special Elite';
+    pincel.font ='Nosifer, cursive';
     pincel.fillStyle = 'red';
     pincel.fillText("NÃO FOI DESTA VEZ!", 200, 50)
     pincel.fillText("GAME OVER!!!", 270, 430);

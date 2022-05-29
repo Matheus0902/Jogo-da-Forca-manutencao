@@ -37,6 +37,7 @@ iniciar.onclick = function iniciarjogo(){
     rede.style.cssText = 'margin-top: 33%';
     recarregar.style.display = 'block';
     reinicia();
+    sound.pause();
     /*botao.style.display = 'none';
     canvas.style.display = 'block';
     inputs.style.display = 'none';
@@ -58,6 +59,7 @@ function inicio(){
     console.log(dicas);
     dica.value = "";
     adicionar.value = "";
+    sound.pause();
 }
 
 enviar.onclick = inicio;
@@ -81,6 +83,7 @@ function reinicia(){
     inputs.style.display = 'none';
     desenhaTraco(15, 55);
     desenhaJogo();
+    sound.pause();
 }
 
 pincel.lineWidth=3;
@@ -91,7 +94,7 @@ function desenhaTraco(x1, x2){
     for(var i = 0; i < palavras[palavraAleatoria].length; i++){
         
     //função desenha espaço da letra
-    pincel.fillStyle = corTraco;
+    pincel.fillStyle = 'blue';
     pincel.beginPath();
     pincel.moveTo(x1, 465);
     pincel.lineTo(x2, 465);
@@ -168,6 +171,9 @@ function verifica(letra){
     if(contagem == separacao.length){
         //alert(/'Parabéns você venceu!!!')
         desenhaVitoria();
+        let sound = new Audio('Super-Mario.ogg');
+        sound.play();
+        sound.volume = 0.2;
     }
 }
 
