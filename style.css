@@ -2,7 +2,7 @@ header{
     background-color: rgb(255, 255, 255);
     padding: 20px;
     height: 50px;
-    margin-bottom: 0;
+    margin-bottom: 80px;
 }
 
 .cabecalho{
@@ -15,8 +15,7 @@ header{
 h2{
     position: absolute;
     right: 0;
-    top:0;
-    
+    top:0;  
 }
 
 main{
@@ -54,6 +53,7 @@ main{
 
 .botao{
     width: 250px;
+    height: 110px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 160px;
@@ -89,19 +89,18 @@ main{
 }
 
 .canvas{
-    position: relative;
+    position: relative;  
 }
 
 #jogo{
     border: none;
     display: block;
     margin: auto;
-    width: 900px;
-    height: 600px;
-    
+    width: 800px;
+    height: 500px; 
 }
 
-.imagem{
+#recarregar{
     position: absolute;
     top: 50%;
     left: 80%;
@@ -109,20 +108,37 @@ main{
     background-color: #00ae14;
 }
 
-.imagem:active{
+#recarregar:active{
     transform: rotate(120deg);
 }
 
 footer{
     margin-top: 500px;
-    height: 155px;
+    height: 60px;
     padding: 5px;
     box-sizing: border-box;
     text-align: center;
+    margin: auto;
 }
 
-.rodape {
+.rede{
+    width: 110px; 
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top:16%;    
+}
+
+.redes{
+    width: 40px;
+}
+
+.rodape p {
+    height: 10px;
     display: inline-block;
-    padding: 120px 0 0 0;
-    font-size: 13px;
+    padding: 120px 0 0 0; 
+}
+
+p{
+  font-size: 13px;  
 }

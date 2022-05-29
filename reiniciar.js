@@ -11,7 +11,7 @@ function novoJogo(){
     letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'w', 'y', 'z'];
     separacao = palavras[palavraAleatoria].split(''); 
     
-    xLetraErrada = 0;
+    xLetraErrada = 20;
     contagem = 0;
     contagemErro = 0;
     
@@ -27,18 +27,18 @@ function novoJogo(){
                 pincel.font='40px arial';
                 pincel.fillStyle = 'black';
                 pincel.fillText(letra.toUpperCase(), xLetraCerta, 460); //letra certa
-                xLetraCerta = xLetraCerta + 60;
+                xLetraCerta = xLetraCerta + 50;
                 errou = false;
                 contagem++;
                     
-            }  else{xLetraCerta = xLetraCerta + 60;}
+            }  else{xLetraCerta = xLetraCerta + 50;}
         }     
     
         if(errou){
                 pincel.font='40px arial';
                 pincel.fillStyle = 'red';
                 pincel.fillText(letra.toUpperCase(), xLetraErrada, 550); //letra errada
-                xLetraErrada = xLetraErrada + 60;
+                xLetraErrada = xLetraErrada + 50;
                 contagemErro++;
                 if(contagemErro == 1){
                     desenhaCabeça()

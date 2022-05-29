@@ -14,6 +14,7 @@ document.querySelector('.inputs').style.display = 'none';
 document.querySelector('.canvas').style.display = 'none';
 document.querySelector('#recarregar').style.display = 'none';
 
+
 function sorteiaPalavra(){
     return Math.round(Math.random()*(palavras.length-1))
 }
@@ -31,6 +32,7 @@ iniciar.onclick = function iniciarjogo(){
     document.querySelector('.canvas').style.display = 'block';
     document.querySelector('.inputs').style.display = 'none';
     document.querySelector('#recarregar').style.display = 'block';
+    document.querySelector('.rede').style.cssText = 'margin-top: 35%';
     desenhaTraco(15, 55);
     desenhaJogo();
 }
@@ -81,8 +83,8 @@ function desenhaTraco(x1, x2){
     pincel.lineWidth = 4.5;
     pincel.stroke();
 
-    x1+=60
-    x2+=60
+    x1+=50
+    x2+=50
     } 
     
     if(palavras[palavraAleatoria]){
@@ -96,7 +98,7 @@ function desenhaTraco(x1, x2){
 var letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'w', 'y', 'z'];
 var separacao = palavras[palavraAleatoria].split(''); //faz um array com as letras da palavra
 
-var xLetraErrada = 0;
+var xLetraErrada = 20;
 var contagem = 0;
 var contagemErro = 0;
 
@@ -112,18 +114,18 @@ function verifica(letra){
             pincel.font='40px arial';
             pincel.fillStyle = 'black';
             pincel.fillText(letra.toUpperCase(), xLetraCerta, 460); //letra certa
-            xLetraCerta = xLetraCerta + 60;
+            xLetraCerta = xLetraCerta + 50;
             errou = false;
             contagem++;
              
-        }  else{xLetraCerta = xLetraCerta + 60;}
+        }  else{xLetraCerta = xLetraCerta + 50;}
     }     
 
     if(errou){
             pincel.font='40px arial';
             pincel.fillStyle = 'red';
             pincel.fillText(letra.toUpperCase(), xLetraErrada, 550); //letra errada
-            xLetraErrada = xLetraErrada + 60;
+            xLetraErrada = xLetraErrada + 50;
             contagemErro++;
             if(contagemErro == 1){
                 desenhaCabeça()
