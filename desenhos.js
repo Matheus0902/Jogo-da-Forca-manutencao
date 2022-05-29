@@ -4,8 +4,9 @@ var pincel = tela.getContext('2d');
 var corCorpo = 'black';
 var corTraco = 'darkblue';
 
-pincel.font='70px arial';
+pincel.font='70px serif';
 pincel.lineWidth=3;
+pincel.lineCap = "round";
 
 function desenhaJogo(){
     
@@ -79,8 +80,105 @@ function desenhaPernaDireita(){
 
 function limpaTela(){
     pincel.fillStyle = 'white';
-    pincel.fillRect(15, 0, 760, 600); 
-    pincel.fillRect(0, 200, 800, 600); 
+    pincel.fillRect(0, 0, 800, 500); 
+}
+
+function  desenhaVitoria(){
     
+    pincel.clearRect(0, 0, 800, 600)
+
+    pincel.fillStyle = 'black';
+    pincel.beginPath();
+    pincel.arc(400, 100, 32, 0, 2*3.14);
+    pincel.fill();
+
+    pincel.fillStyle = 'green';
+    pincel.beginPath();
+    pincel.arc(400, 100, 31.5, 0, 2*3.14);
+    pincel.fill();
+    
+    pincel.fillStyle = 'black';
+    pincel.fillRect(398, 130, 6, 120);
+    
+    pincel.moveTo(400, 150);
+    pincel.lineTo(320, 100);
+    pincel.lineWidth = 5;
+    pincel.stroke();
+
+    pincel.moveTo(402, 150);
+    pincel.lineTo(480, 100);
+    pincel.lineWidth = 5;
+    pincel.stroke();
+
+    pincel.beginPath();
+    pincel.moveTo(400, 248);
+    pincel.lineTo(320, 298);
+    pincel.lineWidth = 5;
+    pincel.stroke();
+
+    pincel.beginPath();
+    pincel.moveTo(402, 248);
+    pincel.lineTo(482, 298);
+    pincel.lineWidth = 5;
+    pincel.stroke();
+
+    pincel.font='40px Special Elite';
+    pincel.fillStyle = 'green';
+    pincel.fillText("PARABÉNS!!!", 295, 30); 
+    pincel.fillText("SALVO DA FORCA!!!", 235, 430); 
+
+    pincel = null;
+
+}
+
+function desenhaDerrota(){
+    
+    pincel.clearRect(0, 0, 800, 600)
+
+    pincel.fillStyle = 'black';
+    pincel.beginPath();
+    pincel.arc(265, 200, 32, 0, 2*3.14);
+    pincel.fill();
+
+    pincel.fillStyle = 'red';
+    pincel.beginPath();
+    pincel.arc(265, 200, 31.5, 0, 2*3.14);
+    pincel.fill();
+    
+    pincel.fillStyle = 'black';
+    pincel.fillRect(299, 200, 150, 5);
+    
+    //perna direita
+    pincel.moveTo(448, 203);
+    pincel.lineTo(528, 153);
+    pincel.lineWidth = 5;
+    pincel.stroke();
+
+    //braço direito
+    pincel.beginPath();
+    pincel.moveTo(380, 153);
+    pincel.lineTo(300, 203);
+    pincel.lineWidth = 5;
+    pincel.stroke();
+
+    //perna esquerda
+    pincel.beginPath();
+    pincel.moveTo(448, 203);
+    pincel.lineTo(528, 253);
+    pincel.lineWidth = 5;
+    pincel.stroke();
+    
+    //braco esquerdo
+    pincel.moveTo(380, 258);
+    pincel.lineTo(300, 202);
+    pincel.lineWidth = 5;
+    pincel.stroke();
+
+    pincel.font ='Special Elite';
+    pincel.fillStyle = 'red';
+    pincel.fillText("NÃO FOI DESTA VEZ!", 200, 50)
+    pincel.fillText("GAME OVER!!!", 270, 430);
+
+    pincel = null;
 }
 

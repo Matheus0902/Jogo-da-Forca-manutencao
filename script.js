@@ -8,11 +8,18 @@ var novaPalavra = document.querySelector('#palavra');
 var iniciar = document.querySelector('#iniciar');
 var enviar = document.querySelector('#enviar');
 var game = document.querySelector('#game');
+var inputs = document.querySelector('.inputs');
+var canvas = document.querySelector('.canvas');
+var recarregar = document.querySelector('#recarregar');
+var botao = document.querySelector('.botao');
+var rede = document.querySelector('.rede');
 
-document.querySelector('#enviar').style.display = 'none';
-document.querySelector('.inputs').style.display = 'none';
-document.querySelector('.canvas').style.display = 'none';
-document.querySelector('#recarregar').style.display = 'none';
+
+
+enviar.style.display = 'none';
+inputs.style.display = 'none';
+canvas.style.display = 'none';
+recarregar.style.display = 'none';
 
 
 function sorteiaPalavra(){
@@ -27,54 +34,62 @@ var corCorpo = 'black';
 var corTraco = 'darkblue';
 
 iniciar.onclick = function iniciarjogo(){
-    
-    document.querySelector('.botao').style.display = 'none';
-    document.querySelector('.canvas').style.display = 'block';
-    document.querySelector('.inputs').style.display = 'none';
-    document.querySelector('#recarregar').style.display = 'block';
-    document.querySelector('.rede').style.cssText = 'margin-top: 35%';
+    rede.style.cssText = 'margin-top: 33%';
+    recarregar.style.display = 'block';
+    reinicia();
+    /*botao.style.display = 'none';
+    canvas.style.display = 'block';
+    inputs.style.display = 'none';
     desenhaTraco(15, 55);
-    desenhaJogo();
+    desenhaJogo();*/
 }
 
 function inicio(){
-    document.querySelector('#iniciar').style.display = 'block';
-    document.querySelector('#palavra').style.display = 'block';
-    document.querySelector('.inputs').style.display = 'none';
-    document.querySelector('#enviar').style.display = 'none';
+    iniciar.style.display = 'block';
+    novaPalavra.style.display = 'block';
+    inputs.style.display = 'none';
+    enviar.style.display = 'none';
+    rede.style.cssText = 'margin-top: 16%';
     desenhaJogo();
     desenhaTraco();
     palavras.push(adicionar.value);
     dicas.push(dica.value);
     console.log(palavras);
     console.log(dicas);
+    dica.value = "";
+    adicionar.value = "";
 }
 
 enviar.onclick = inicio;
 
 novaPalavra.onclick = function(){
-    document.querySelector('.inputs').style.display = 'block';
-    document.querySelector('#enviar').style.display = 'block';
-    document.querySelector('#palavra').style.display = 'none';
-    document.querySelector('#iniciar').style.display = 'none';
-    document.querySelector('.canvas').style.display = 'none';
+    inputs.style.display = 'block';
+    enviar.style.display = 'block';
+    novaPalavra.style.display = 'none';
+    iniciar.style.display = 'none';
+    canvas.style.display = 'none';
+    rede.style.cssText = 'margin-top: 20.4%';
+    
 }
 
 function reinicia(){
+    pincel = tela.getContext('2d');
     pincel.clearRect(0, 0, 800, 600)
     novoJogo();
-    document.querySelector('.botao').style.display = 'none';
-    document.querySelector('.canvas').style.display = 'block';
-    document.querySelector('.inputs').style.display = 'none';
+    botao.style.display = 'none';
+    canvas.style.display = 'block';
+    inputs.style.display = 'none';
     desenhaTraco(15, 55);
     desenhaJogo();
 }
 
 pincel.lineWidth=3;
 
+
 function desenhaTraco(x1, x2){
 
     for(var i = 0; i < palavras[palavraAleatoria].length; i++){
+        
     //função desenha espaço da letra
     pincel.fillStyle = corTraco;
     pincel.beginPath();
@@ -89,11 +104,12 @@ function desenhaTraco(x1, x2){
     
     if(palavras[palavraAleatoria]){
 
-        pincel.font='20px arial';
+        pincel.font ='25px Special Elite'; 
         pincel.fillStyle = 'green';
-        pincel.fillText('Dica: '+ dicas[palavraAleatoria], 200, 20);
+        pincel.fillText('DICA: '+ dicas[palavraAleatoria].toUpperCase(), 200, 20);
     } 
 }
+
 
 var letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'w', 'y', 'z'];
 var separacao = palavras[palavraAleatoria].split(''); //faz um array com as letras da palavra
@@ -103,7 +119,7 @@ var contagem = 0;
 var contagemErro = 0;
 
 function verifica(letra){
-    
+
     var xLetraCerta = 20;
     var errou = true;
          
@@ -111,7 +127,7 @@ function verifica(letra){
         
         if(letra == separacao[i]){
            
-            pincel.font='40px arial';
+            pincel.font='40px Special Elite';
             pincel.fillStyle = 'black';
             pincel.fillText(letra.toUpperCase(), xLetraCerta, 460); //letra certa
             xLetraCerta = xLetraCerta + 50;
@@ -122,7 +138,7 @@ function verifica(letra){
     }     
 
     if(errou){
-            pincel.font='40px arial';
+            pincel.font='40px Special Elite';
             pincel.fillStyle = 'red';
             pincel.fillText(letra.toUpperCase(), xLetraErrada, 550); //letra errada
             xLetraErrada = xLetraErrada + 50;
@@ -144,12 +160,14 @@ function verifica(letra){
 
             } else if(contagemErro == 6){
                 desenhaPernaDireita()
-                alert('GAME OVER!!!')
+                desenhaDerrota();
+                //alert('GAME OVER!!!')
             } 
     } 
     
     if(contagem == separacao.length){
-        alert('Parabéns você venceu!!!')
+        //alert(/'Parabéns você venceu!!!')
+        desenhaVitoria();
     }
 }
 
