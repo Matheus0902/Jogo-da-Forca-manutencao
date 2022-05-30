@@ -38,11 +38,6 @@ iniciar.onclick = function iniciarjogo(){
     recarregar.style.display = 'block';
     reinicia();
     sound.pause();
-    /*botao.style.display = 'none';
-    canvas.style.display = 'block';
-    inputs.style.display = 'none';
-    desenhaTraco(15, 55);
-    desenhaJogo();*/
 }
 
 function inicio(){
@@ -59,7 +54,7 @@ function inicio(){
     console.log(dicas);
     dica.value = "";
     adicionar.value = "";
-    sound.pause();
+    
 }
 
 enviar.onclick = inicio;
@@ -83,7 +78,7 @@ function reinicia(){
     inputs.style.display = 'none';
     desenhaTraco(15, 55);
     desenhaJogo();
-    sound.pause();
+    
 }
 
 pincel.lineWidth=3;
@@ -164,16 +159,16 @@ function verifica(letra){
             } else if(contagemErro == 6){
                 desenhaPernaDireita()
                 desenhaDerrota();
-                //alert('GAME OVER!!!')
+                const newLocal = 'audios/derrota.wav';
+                let sound1 = new Audio(newLocal);
+                sound1.play();
             } 
     } 
     
     if(contagem == separacao.length){
-        //alert(/'Parabéns você venceu!!!')
         desenhaVitoria();
-        let sound = new Audio('Super-Mario.ogg');
-        sound.play();
-        sound.volume = 0.2;
+        let sound2 = new Audio('audios/vitoria.wav');
+        sound2.play();
     }
 }
 
