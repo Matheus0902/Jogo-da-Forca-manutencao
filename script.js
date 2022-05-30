@@ -1,6 +1,6 @@
 
-let palavras = ['astronauta', 'contabilidade', 'hospital', 'faculdade', 'campeonato', 'impressora', 'restaurante', 'caminhonete'];
-var dicas = ['Viajante', 'Profissão', 'Saúde', 'Estudos', 'Disputa', 'Papelaria', 'Comida', 'Transporte']
+let palavras = ['limonada', 'passarinho', 'serenata', 'faculdade', 'campeonato', 'furadeira', 'restaurante', 'caminhonete', 'violino', 'engenheiro' , 'geografia', 'passaporte'];
+var dicas = ['Bebida', 'Animal', 'Apresentação', 'Estudos', 'Disputa', 'Ferramenta', 'Comida', 'Transporte', 'Som' , 'Profissão', 'Disciplina', 'Documento']
 
 var adicionar = document.querySelector('#adicionar');
 var dica = document.querySelector('#dica');
@@ -13,8 +13,26 @@ var canvas = document.querySelector('.canvas');
 var recarregar = document.querySelector('#recarregar');
 var botao = document.querySelector('.botao');
 var rede = document.querySelector('.rede');
+var funciona = true;
 
+inputs.addEventListener('keypress', function(e){
 
+    if(!verificaChar(e)) {
+        e.preventDefault();
+    }
+})
+
+function verificaChar(e) {
+
+    const char = String.fromCharCode(e.keyCode);
+    
+    const padrão = '[a-z]';
+
+    if(char.match(padrão)){
+        console.log(char);
+        return true; 
+    }
+}
 
 enviar.style.display = 'none';
 inputs.style.display = 'none';
@@ -37,7 +55,6 @@ iniciar.onclick = function iniciarjogo(){
     rede.style.cssText = 'margin-top: 33%';
     recarregar.style.display = 'block';
     reinicia();
-    sound.pause();
 }
 
 function inicio(){
@@ -118,57 +135,59 @@ var contagemErro = 0;
 
 function verifica(letra){
 
-    var xLetraCerta = 20;
-    var errou = true;
+    if(adicionar.value == "" && dica.value == ""){
+        var xLetraCerta = 20;
+        var errou = true;
          
-    for(var i = 0; i < separacao.length; i++){
+        for(var i = 0; i < separacao.length; i++){
         
         if(letra == separacao[i]){
-           
-            pincel.font='40px Special Elite';
-            pincel.fillStyle = 'black';
-            pincel.fillText(letra.toUpperCase(), xLetraCerta, 460); //letra certa
-            xLetraCerta = xLetraCerta + 50;
-            errou = false;
-            contagem++;
-             
-        }  else{xLetraCerta = xLetraCerta + 50;}
-    }     
-
-    if(errou){
-            pincel.font='40px Special Elite';
-            pincel.fillStyle = 'red';
-            pincel.fillText(letra.toUpperCase(), xLetraErrada, 550); //letra errada
-            xLetraErrada = xLetraErrada + 50;
-            contagemErro++;
-            if(contagemErro == 1){
-                desenhaCabeça()
             
-            } else if(contagemErro == 2){
-                desenhaCorpo()
+                pincel.font='40px Special Elite';
+                pincel.fillStyle = 'black';
+                pincel.fillText(letra.toUpperCase(), xLetraCerta, 460); //letra certa
+                xLetraCerta = xLetraCerta + 50;
+                errou = false;
+                contagem++;
+                
+            }  else{xLetraCerta = xLetraCerta + 50;}
+        }     
 
-            } else if(contagemErro == 3){
-                desenhaBracoEsquerdo()
+        if(errou){
+                pincel.font='40px Special Elite';
+                pincel.fillStyle = 'red';
+                pincel.fillText(letra.toUpperCase(), xLetraErrada, 550); //letra errada
+                xLetraErrada = xLetraErrada + 50;
+                contagemErro++;
+                if(contagemErro == 1){
+                    desenhaCabeça()
+                
+                } else if(contagemErro == 2){
+                    desenhaCorpo()
 
-            } else if(contagemErro == 4){
-                desenhaBracoDireito()
+                } else if(contagemErro == 3){
+                    desenhaBracoEsquerdo()
 
-            } else if(contagemErro == 5){
-                desenhaPernaEsquerda()
+                } else if(contagemErro == 4){
+                    desenhaBracoDireito()
 
-            } else if(contagemErro == 6){
-                desenhaPernaDireita()
-                desenhaDerrota();
-                const newLocal = 'audios/derrota.wav';
-                let sound1 = new Audio(newLocal);
-                sound1.play();
-            } 
-    } 
-    
-    if(contagem == separacao.length){
-        desenhaVitoria();
-        let sound2 = new Audio('audios/vitoria.wav');
-        sound2.play();
+                } else if(contagemErro == 5){
+                    desenhaPernaEsquerda()
+
+                } else if(contagemErro == 6){
+                    desenhaPernaDireita()
+                    desenhaDerrota();
+                    const newLocal = 'audios/derrota.wav';
+                    let sound1 = new Audio(newLocal);
+                    sound1.play();
+                } 
+        } 
+        
+        if(contagem == separacao.length){
+            desenhaVitoria();
+            let sound2 = new Audio('audios/vitoria.wav');
+            sound2.play();
+        }
     }
 }
 
