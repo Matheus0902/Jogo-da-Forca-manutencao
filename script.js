@@ -10,10 +10,11 @@ var enviar = document.querySelector('#enviar');
 var game = document.querySelector('#game');
 var inputs = document.querySelector('.inputs');
 var canvas = document.querySelector('.canvas');
-var recarregar = document.querySelector('#recarregar');
+var recarregar = document.querySelector('#novapalavra');
 var botao = document.querySelector('.botao');
 var rede = document.querySelector('.rede');
 var funciona = true;
+var teclado = document.querySelector('.teclado');
 
 inputs.addEventListener('keypress', function(e){
 
@@ -34,11 +35,12 @@ function verificaChar(e) {
     }
 }
 
+
 enviar.style.display = 'none';
 inputs.style.display = 'none';
 canvas.style.display = 'none';
 recarregar.style.display = 'none';
-
+teclado.style.display = 'none';
 
 function sorteiaPalavra(){
     return Math.round(Math.random()*(palavras.length-1))
@@ -70,8 +72,7 @@ function inicio(){
     console.log(palavras);
     console.log(dicas);
     dica.value = "";
-    adicionar.value = "";
-    
+    adicionar.value = "";   
 }
 
 enviar.onclick = inicio;
