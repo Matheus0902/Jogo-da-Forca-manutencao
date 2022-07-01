@@ -1,6 +1,6 @@
 //desenhaforca
-var tela = document.querySelector('canvas');
-var pincel = tela.getContext('2d');
+var canvas = document.getElementById('jogo');
+var pincel = canvas.getContext('2d');
 var corCorpo = 'black';
 var corTraco = 'darkblue';
 
@@ -79,13 +79,12 @@ function desenhaPernaDireita(){
 }
 
 function limpaTela(){
-    pincel.fillStyle = 'white';
-    pincel.fillRect(0, 0, 800, 500); 
+    pincel.clearRect(0, 0, 800, 600);
 }
 
 function  desenhaVitoria(){
     
-    pincel.clearRect(0, 0, 800, 600)
+    limpaTela();
 
     pincel.fillStyle = 'black';
     pincel.beginPath();
@@ -182,3 +181,40 @@ function desenhaDerrota(){
     pincel = null;
 }
 
+function desenhaLetraErrada(letra, xLetraErrada){
+    pincel.font='40px Special Elite';
+    pincel.fillStyle = 'red';
+    pincel.fillText(letra.toUpperCase(), xLetraErrada, 550);
+}
+
+function desenhaLetraCerta(letra, xLetraCerta){
+    pincel.font='40px Special Elite';
+    pincel.fillStyle = 'green';
+    pincel.fillText(letra.toUpperCase(), xLetraCerta, 460);
+}
+
+function desenhaTraco(x1, x2, palavraAleatoria){
+    
+    pincel.lineWidth=3;
+
+    for(var i = 0; i < palavras[palavraAleatoria].length; i++){
+        
+    //função desenha espaço da letra
+    pincel.fillStyle = 'blue';
+    pincel.beginPath();
+    pincel.moveTo(x1, 465);
+    pincel.lineTo(x2, 465);
+    pincel.lineWidth = 4.5;
+    pincel.stroke();
+
+    x1+=50
+    x2+=50
+    } 
+    
+    if(palavras[palavraAleatoria]){
+
+        pincel.font ='25px Special Elite'; 
+        pincel.fillStyle = 'green';
+        pincel.fillText('DICA: '+ dicas[palavraAleatoria].toUpperCase(), 200, 20);
+    } 
+}

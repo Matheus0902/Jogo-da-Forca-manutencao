@@ -47,11 +47,11 @@ main{
     margin-top: 100px;
 }
 
-#enviar {
+.enviar-palavra {
     margin-top: 0;
 }
 
-.palavras{
+.inputs-palavras{
     width: 100%;
     height: 50px;
     border: none;
@@ -110,7 +110,7 @@ main{
     position: relative;  
 }
 
-#jogo{
+.canvas-game {
     border: none;
     display: block;
     margin: auto;
@@ -118,7 +118,7 @@ main{
     height: 500px; 
 }
 
-.imagem{
+.muda-palavra{
     width: 4%;
     height: 50px;
     position: absolute;
@@ -128,7 +128,7 @@ main{
    
 }
 
-.imagem:active{
+.muda-palavra:active{
     transition: 0.4s all;
     transform: rotate(1.0turn);
 }
@@ -198,6 +198,15 @@ p{
   padding-bottom: 0.8%; 
 }
 
+.invisivel{
+    display: none;
+}
+
+.visivel{
+    display: block;
+}
+
+
 @media (max-width:450px) {
     .botao {
         width: 50%;
@@ -211,13 +220,13 @@ p{
         margin-top: 50%;
     }
 
-    #jogo {
+    .canvas-game {
         width: 100%;
         height: 30%;
         margin: 0 0 auto;
     }
 
-    .imagem {
+    .muda-palavra {
         width: 25px;
         height: 25px;
     }
@@ -228,3 +237,4 @@ p{
     }
 
 }
+
