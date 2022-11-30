@@ -4,81 +4,86 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Play - Jogo da Forca</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jogo da Forca</title>
 
-       <link rel="stylesheet" href="css/reset.css"> 
+        <link rel="stylesheet" href="css/reset.css"> 
         <link rel="stylesheet" href="css/style.css"> 
+        <link rel="stylesheet" href="css/game.css"> 
+        <link rel="stylesheet" href="css/wordTip.css">
+        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/responsive.css">
        
     <body>
-         <header> 
-             <div class="cabecalho"> 
-                <h1><a href="https://www.alura.com.br/"><img  class="logos" id="alura" src="imagens/logoalura.png"></h1></a>
-                <h2><a href="https://matheus0902.github.io/Challenge-II-Jogo-da-Forca/"><img class="logos" id="game" src="imagens/game.png"></h2></a>
-             </div> 
-         </header>
-         <main>
-           <div class="inputs invisivel" id="inputs">
-               <Input type="text" id="adicionar-palavra" class="inputs-palavras nova-palavra" maxlength="15" placeholder="Nova palavra..."></Input>
-               <input type="text" id="adicionar-dica" class="inputs-palavras nova-dica" placeholder="Dica...">
-           </div>
-            <div class="botao">
-                <div class="bnt-enviar invisivel">
-                    <button type="button" class="botoes enviar-palavra" name="enviar" id="enviar">Enviar</button>
+        <div id="app">
+            <header> 
+                <div id="box-top"> 
+                    <h1><a href="https://www.alura.com.br/"><img  class="logo" id="alura" src="assets/logoalura.png"></h1></a>
+                    <h2><a ><img class="logo" id="home" src="assets/game.png"></a></h2>
+                </div> 
+            </header>
+            <main>
+                <div id="box-new-wordTip">
+                    <Input type="text" id="new-word" class="fields" maxlength="15" placeholder="Nova palavra..."></Input>
+                    <input type="text" id="new-tip" class="fields" placeholder="Dica...">
                 </div>
-                <div class="bnt-inicio">
-                    <button type="button" class="botoes iniciar-jogo" id="iniciar">Iniciar Jogo</button>
-                    <button type="button" class="botoes adicionar-nova-palavra" id="palavra">Nova Palavra</button>
+                <div id="box-button">
+                    <div id="box-button-submit">
+                       <button type="button" class="buttons" name="enviar" id="button-submit">Enviar</button>
+                    </div>
+                    <div id="box-button-new-wordGame">
+                       <button type="button" class="buttons" id="button-new-game">Iniciar Jogo</button>
+                       <button type="button" class="buttons" id="button-new-word">Nova Palavra</button>
+                   </div>
                 </div>
-            </div>
-            <div class="canvas invisivel">
-                <canvas class="canvas-game" id="jogo" width="800" height="600"></canvas>  
-            </div>
-            <div class="teclado invisivel">
-                <button class="letras" value="a">A</button>
-                <button class="letras" value="b">B</button>
-                <button class="letras" value="c">C</button>
-                <button class="letras" value="d">D</button>
-                <button class="letras" value="e">E</button>
-                <button class="letras" value="f">F</button>
-                <button class="letras" value="g">G</button>
-                <button class="letras" value="h">H</button>
-                <button class="letras" value="i">I</button>
-                <button class="letras" value="j">J</button>
-                <button class="letras" value="k">K</button>
-                <button class="letras" value="l">L</button>
-                <button class="letras" value="m">M</button>
-                <button class="letras" value="n">N</button>
-                <button class="letras" value="o">O</button>
-                <button class="letras" value="p">P</button>
-                <button class="letras" value="q">Q</button>
-                <button class="letras" value="r">R</button>
-                <button class="letras" value="s">S</button>
-                <button class="letras" value="t">T</button>
-                <button class="letras" value="u">U</button>
-                <button class="letras" value="v">V</button>
-                <button class="letras" value="x">X</button>
-                <button class="letras" value="w">W</button>
-                <button class="letras" value="y">Y</button>
-                <button class="letras" value="z">Z</button>
-                <button id="recarregar" class="letras">REINICIAR</button>
-            </div>
-         </main>
-         <footer>
-             <div class="rede"> 
-                 <a href="https://www.linkedin.com/in/matheus-ant%C3%B4nio-6a2b6a218/"><img id="linkedin" class="redes" src="imagens/lin.png" alt="Logo do linkedin"></a>
-                <a href="https://github.com/Matheus0902"><img id="git" class="redes" src="imagens/git.png" alt="Logo do github" ></a>
-            </div>
-            <p class="rodape">Challenge Alura II | &copy; Copyright Jogo da Forca | Desenvolvedor - Matheus Antonio</p>
-         </footer> 
-        
-         <script src="js/script.js"></script>
-         <script src="js/desenhos.js"></script>
-         <script src="js/verifica-letra.js"></script>
-         <script src="js/telas-jogo.js"></script>
-            
+                <div id="box-game">
+                    <p class="play-game bg" id="play-game"></p>
+                </div>
+                <div id="box-letter">
+                </div>
+                <div id="box-keyboard">
+                    <button class="letter" id="a" onclick="teste('a')">A</button>
+                    <button class="letter" id="b" onclick="teste('b')">B</button>
+                    <button class="letter" id="c" onclick="teste('c')">C</button>
+                    <button class="letter" id="d" onclick="teste('d')">D</button>
+                    <button class="letter" id="e" onclick="teste('e')">E</button>
+                    <button class="letter" id="f" onclick="teste('f')">F</button>
+                    <button class="letter" id="g" onclick="teste('g')">G</button>
+                    <button class="letter" id="h" onclick="teste('h')">H</button>
+                    <button class="letter" id="i" onclick="teste('i')">I</button>
+                    <button class="letter" id="j" onclick="teste('j')">J</button>
+                    <button class="letter" id="k" onclick="teste('k')">K</button>
+                    <button class="letter" id="l" onclick="teste('l')">L</button>
+                    <button class="letter" id="m" onclick="teste('m')">M</button>
+                    <button class="letter" id="n" onclick="teste('n')">N</button>
+                    <button class="letter" id="o" onclick="teste('o')">O</button>
+                    <button class="letter" id="p" onclick="teste('p')">P</button>
+                    <button class="letter" id="q" onclick="teste('q')">Q</button>
+                    <button class="letter" id="r" onclick="teste('r')">R</button>
+                    <button class="letter" id="s" onclick="teste('s')">S</button>
+                    <button class="letter" id="t" onclick="teste('t')">T</button>
+                    <button class="letter" id="u" onclick="teste('u')">U</button>
+                    <button class="letter" id="v" onclick="teste('v')">V</button>
+                    <button class="letter" id="x" onclick="teste('x')">X</button>
+                    <button class="letter" id="w" onclick="teste('w')">W</button>
+                    <button class="letter" id="y" onclick="teste('y')">Y</button>
+                    <button class="letter" id="z" onclick="teste('z')">Z</button>
+                    <button id="reload">NEW</button>
+                </div>
+            </main>
+            <footer>
+                <div id="box-network"> 
+                    <a href="https://www.linkedin.com/in/matheus-ant%C3%B4nio-6a2b6a218/"><img id="linkedin" class="network" src="assets/lin.png" alt="Logo do linkedin"></a>
+                    <a href="https://github.com/Matheus0902"><img id="github" class="network" src="assets/git.png" alt="Logo do github" ></a>
+                </div>
+                <p id="credits">Challenge Alura II | &copy; Copyright Jogo da Forca | Desenvolvedor - Matheus Antonio</p>
+            </footer>
+        </div>
+         
     </body>
 
-
-
+    <script src="js/screen.js"></script>
+    <script src="js/script.js"></script>
+            
 </html>

@@ -1,240 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Henny+Penny&family=Rubik+Wet+Paint&family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Henny+Penny&family=Rubik+Wet+Paint&family=Slackey&family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Henny+Penny&family=Nosifer&family=Rubik+Wet+Paint&family=Slackey&family=Special+Elite&display=swap');
+.hidden{
+    display: none;
+}
 
 body{
-    background-color: #c8e5ff;
-    height: 100%;
+    background-image: url('../assets/halloween.png');
+    background-repeat: no-repeat;
+}
+
+#app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 50px;
 }
 
 header{
-    padding: 20px;
-    height: 50px;
-    margin-bottom: 80px;
-}
-
-.cabecalho{
-    position: relative;
-    width: 90%;
-    margin: auto;
-    top: 50px;
-}
-
-.logos:hover{
-    transition: 0.4s all;
-    transform: scale(1.2, 1.2);
-}
-
-h2{
-    position: absolute;
-    right: 0;
-    top:0;  
-}
-
-main{
-   width: 100%; 
-   height: 110px;
-}
-
-.inputs{
-    width: 37%;
-    height: 110px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-}
-
-.enviar-palavra {
-    margin-top: 0;
-}
-
-.inputs-palavras{
     width: 100%;
-    height: 50px;
-    border: none;
-    background-color: rgb(37, 60, 191);
-    margin: 10px 0;
-    font-size: 22px;
-    font-family: 'Special Elite';
-    font-weight: bold;
-    color: white;
-    box-sizing: border-box;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    display: inline-block;
 }
 
-.botao{
-    width: 25%;
-    height: 110px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 160px;
-    
+#box-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.botao button{
-    width: 100%;
-    height: 50px;
-    border: none;
-    background-color: rgb(0, 29, 192);
-    margin-top: 6px;
+.buttons{
+    background-color: rgb(0, 126, 126);
     font-size: 22px;
     font-family: 'Henny Penny', cursive;
     font-weight: bold;
     box-sizing: border-box;
     border: 2px solid #000000;
     border-radius: 5px;
-    display: inline-block;
-
 }
 
-.botao button:hover{
-    color: #06eaff;
-    border-color: #06eaff;
-    font-size: 26px;
-    transition: 0.2s all;
-    transform: scale(1.1, 1.2);
+#box-network{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 95px;
+    padding: 5px 0;
+    gap: 5px;
 }
 
-.botao button:active{
-    color: rgb(6, 253, 6);
-    border-color: rgb(6, 253, 6);
-    background-color: rgb(0, 0, 179);
-}
-
-.canvas{
-    position: relative;  
-}
-
-.canvas-game {
-    border: none;
-    display: block;
-    margin: auto;
-    width: 60%;
-    height: 500px; 
-}
-
-.muda-palavra{
-    width: 4%;
-    height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 80%;
-    border-radius: 40px;
-   
-}
-
-.muda-palavra:active{
-    transition: 0.4s all;
-    transform: rotate(1.0turn);
-}
-
-.teclado{
-    width: 330px;   
-}
-
-.letras{
+.network{
     width: 40px;
-    height: 30px;
-    background:#0dff00;
-    font-size: 20px;
-    font-family: 'Special Elite';
-    font-weight: bold;
-    margin: 2px auto;
-    border-radius: 10%;
-    padding-top: 4px;
+    border-radius: 10px;
+    background-color: rgb(0, 255, 255);
 }
 
-.letras:hover{
-    background: #06eaff;
-    transform: scale(1.3,1.3);
-}
-
-#recarregar{
-    width: 84px;
+#credits{
     font-size: 13px;
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
 }
-
-
-footer{
-    margin-top: 500px;
-    width: 100%;
-    height: 60px;
-    padding: 5px;
-    box-sizing: border-box;
-    text-align: center;
-    margin: auto;
-}
-
-.rede{
-    width: 110px; 
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto; 
-    margin-top:16%;    
-}
-
-.redes{
-    width: 40px;
-}
-
-.redes:hover{
-    transition: 0.4s all;
-    transform: scale(1.3, 1.3);
-}
-
-.rodape p {
-    height: 10px;
-    display: inline-block;
-    padding: 120px 0 0 0; 
-}
-
-p{
-  font-size: 13px; 
-  padding-bottom: 0.8%; 
-}
-
-.invisivel{
-    display: none;
-}
-
-.visivel{
-    display: block;
-}
-
-
-@media (max-width:450px) {
-    .botao {
-        width: 50%;
-    } 
-    
-    .rodape p {
-        padding: 200px 0 0 0;
-    }
-
-    .rede{
-        margin-top: 50%;
-    }
-
-    .canvas-game {
-        width: 100%;
-        height: 30%;
-        margin: 0 0 auto;
-    }
-
-    .muda-palavra {
-        width: 25px;
-        height: 25px;
-    }
-
-    .key{
-        display: block;
-        background: #000000;
-    }
-
-}
-
