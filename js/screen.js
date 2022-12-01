@@ -2,6 +2,7 @@ const boxWordGame = document.querySelector('#box-button-new-wordGame');
 const boxGame = document.querySelector('#box-game');
 const boxLetter = document.querySelector('#box-letter');
 const boxKeyboard = document.querySelector('#box-keyboard');
+const boxTip = document.querySelector('#box-tip');
 
 const buttonNewGame = document.querySelector('#button-new-game');
 buttonNewGame.addEventListener('click' , function(){
@@ -10,6 +11,7 @@ buttonNewGame.addEventListener('click' , function(){
     boxGame.style.display = 'flex';
     boxLetter.style.display = 'flex';
     boxKeyboard.style.display = 'flex';
+    boxTip.style.display = 'block';
 })
 
 const boxWordTip = document.querySelector('#box-new-wordTip');
@@ -41,6 +43,7 @@ home.addEventListener('click' , function(){
     boxKeyboard.style.display = 'none';
     boxWordTip.style.display = 'none';
     boxSubmit.style.display = 'none';
+    boxTip.style.display = 'none';
 
     document.querySelector('.play-game').id = 'play-game';
 })

@@ -46,7 +46,23 @@
 }
 
 .hidden-letter{
-    background-color: rgb(0, 126, 126);
+    background-color: rgb(8, 204, 204); ;
+    color: rgb(8, 204, 204); ;
+    text-transform: uppercase;
+}
+
+.visible-letter{
+    color: black;
+}
+
+#box-tip{
+    display: none;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: rgb(8, 204, 204); 
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 #box-keyboard{
