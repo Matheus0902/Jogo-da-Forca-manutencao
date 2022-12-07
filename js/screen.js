@@ -12,6 +12,7 @@ buttonNewGame.addEventListener('click' , function(){
     boxLetter.style.display = 'flex';
     boxKeyboard.style.display = 'flex';
     boxTip.style.display = 'block';
+
 })
 
 const boxWordTip = document.querySelector('#box-new-wordTip');

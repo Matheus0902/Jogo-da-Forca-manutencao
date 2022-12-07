@@ -80,3 +80,5 @@ function checks(letter){
 
     document.querySelector('.'+letter).disabled = true;
 }
+
+
